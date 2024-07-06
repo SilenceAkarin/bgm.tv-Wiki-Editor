@@ -46,7 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if (TextUtils.isEmpty(email) && TextUtils.isEmpty(password) && TextUtils.isEmpty(password_ag)) {
                     Toast.makeText(RegisterActivity.this, "请输入邮箱和密码", Toast.LENGTH_SHORT).show();
-                } else if (password != password_ag) {
+                } else if (!password.equals(password_ag)) {
                     Toast.makeText(RegisterActivity.this, "两次密码不一致", Toast.LENGTH_SHORT).show();
                 } else {
                     int row = UserDBHelper.getInstance(RegisterActivity.this).register(email,password,"Empty");
